@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article
   end
 
   def create
@@ -29,14 +30,11 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to article_url(@article), notice: 'Article was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    if @article.update(article_params)
+      flash[:notice] = 'Article was successfully updated.'
+      redirect_to @article
+    else
+      render 'edit'
     end
   end
 
