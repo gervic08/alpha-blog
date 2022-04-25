@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article
   end
 
   def new
@@ -16,8 +15,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article
-  end
+  end 
 
   def create
     @article = Article.new(article_params)
