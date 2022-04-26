@@ -9,6 +9,7 @@ default: &default
   encoding: UTF-8 
   pool: 5 
   adapter: postgresql 
+  port: 5433
   timeout: 5000 
 
 sqlite: &sqlite
