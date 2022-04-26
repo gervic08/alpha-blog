@@ -4,8 +4,8 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 default: &default 
-  user: aqui_tu_usuario 
-  password: aqui_tu_password 
+  user: gervic   
+  password: dni624604 
   encoding: UTF-8 
   pool: 5 
   adapter: postgresql 
