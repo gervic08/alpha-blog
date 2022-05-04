@@ -1,0 +1,38 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.jumbotron {
+  margin-top: 25px;
+  box-shadow: 5px 5px 10px rgb(104, 104, 104);
+  background-image: asset-url("portada-blog.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}
+
+.navbar {
+  background-color: black !important;
+  box-shadow: 5px 5px 10px rgb(104, 104, 104);
+}
+
+.navbar-brand {
+  color: white !important;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+}
+
+.nav-link {
+  color: white !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgray;
+}
