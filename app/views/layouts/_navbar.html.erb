@@ -9,18 +9,15 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about">About</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sections
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/articles">List of articles</a>
-          <a class="dropdown-item" href="/articles/new">Create New Article</a>
-          <%# <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a> %>
+          <%= link_to 'List of articles', articles_path, class: "dropdown-item" %>
+          <%= link_to 'Create New Article', new_article_path, class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+          <%= link_to 'About page', about_path, class: "dropdown-item" %>
         </div>
       </li>
       <li class="nav-item">
