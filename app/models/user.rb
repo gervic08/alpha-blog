@@ -1,4 +1,4 @@
-#frozen_string_literal: true
+# frozen_string_literal: true
 
 # == Schema Information
 #
@@ -11,5 +11,14 @@
 #  updated_at :datetime         not null
 #
 class User < ApplicationRecord
+  validates :username, presence: true,
+                       uniqueness: { case_sensitive: false },
+                       length: { minimum: 3, maximum: 20 }
 
+  VALID_REGEX_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
+
+  validates :email, presence: true,
+                    uniqueness: { case_sensitive: false },
+                    length: { maximum: 120 },
+                    format: { with: VALID_REGEX_EMAIL }
 end
