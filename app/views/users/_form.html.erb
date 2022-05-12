@@ -13,16 +13,18 @@
           <%=form.label :email, class: "col-2 mt-4 col-form-label text-light text-center" %>
           <div class="col-9">
             <%= form.email_field :email, class: "form-control mt-4 shadow rounded", placeholder: "Please put your email address."  %>
+            <%= form.email_field :email, class: "form-control mt-4 shadow rounded", placeholder: "Please put your email address."  %>
           </div>
         </div>   
         <div class="form-group row">
           <%=form.label :password, class: "col-2 mt-4 col-form-label text-light text-center" %>
           <div class="col-9">
             <%= form.password_field :password, class: "form-control mt-4 shadow rounded", placeholder: "Choose a password."  %>
+            <%= form.password_field :password, class: "form-control mt-4 shadow rounded", placeholder: "Choose a password."  %>
           </div>
         </div>   
         <div class="form-group row justify-content-center">
-          <%= form.submit class: "btn mb-4 btn-outline-light btn-lg" %>
+          <%= form.submit "Sign Up", class: "btn mb-4 btn-outline-light btn-lg" %>
         </div>
       <% end %> 
     </div>
