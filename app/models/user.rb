@@ -11,6 +11,8 @@
 #  updated_at :datetime         not null
 #
 class User < ApplicationRecord
+  before_save { self.email = email.downcase }
+
   has_many :articles
 
   validates :username, presence: true,
