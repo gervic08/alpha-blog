@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[update edit]
+  before_action :set_user, only: %i[show update edit]
+
+  def show
+    @user
+    @articles = @user.articles
+  end
 
   def new
     @user = User.new
