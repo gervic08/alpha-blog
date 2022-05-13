@@ -3,6 +3,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show update edit]
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user
     @articles = @user.articles
