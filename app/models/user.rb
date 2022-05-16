@@ -29,4 +29,5 @@ class User < ApplicationRecord
                     length: { maximum: 120 },
                     format: { with: VALID_REGEX_EMAIL }
 
+  max_paginates_per 5
 end
