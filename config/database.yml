@@ -23,9 +23,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: gervic
+  database: postgres
   pool: 5
   username: gervic
   password: dni624604
-  host: localhost
+  host: 127.0.0.1:3000
 
