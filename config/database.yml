@@ -27,5 +27,5 @@ production:
   pool: 5
   username: gervic
   password: dni624604
-  host: localhost
+  host: 172.29.32.172
 
