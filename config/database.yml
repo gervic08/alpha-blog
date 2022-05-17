@@ -23,6 +23,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL'] %>
-  database: alphablog
+  database: gervic
+  pool: 5
+  username: gervic
+  password: dni624604
+  host: localhost
+
