@@ -5,6 +5,9 @@
 <div class="row justify-content-center mt-4 mb-4">
   <%= link_to 'Update your Profile', edit_user_path(@user), class: "btn btn-outline-success text-white text-center"%>
 </div>
+<div class="row justify-content-center mt-4 mb-4">
+  <%= link_to 'Log out', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger text-white text-center"%>
+</div>
 
 <%= render 'articles/article'%>
 
