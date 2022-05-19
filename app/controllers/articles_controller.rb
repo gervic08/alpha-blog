@@ -2,6 +2,8 @@
 
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
+  before_action :require_user, except: %i[index show]
+  before_action :require_same_user, only: %i[edit update destroy]
 
   def index
     @articles = Article.order(:title).page params[:page]
@@ -55,5 +57,12 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :description)
+  end
+
+  def require_same_user
+    unless current_user == @article.user
+      flash[:notice] = "Your user is not allowed to do that"
+      redirect_to articles_path
+    end
   end
 end
