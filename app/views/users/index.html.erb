@@ -10,7 +10,9 @@
           <h5 class="card-title"><%= gravatar_for(user, size: 150) %></h5>
           <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
           <%= link_to 'View Profile', user, class: "btn btn-primary text-white"%>
-          <%= link_to 'Edit Profile', edit_user_path(user), class: "btn btn-success text-white"%>
+          <% if logged_in? && user == current_user %>
+            <%= link_to 'Edit Profile', edit_user_path(user), class: "btn btn-success text-white"%>
+          <% end %>  
         </div>
         <div class="card-footer text-muted">
           created <%= time_ago_in_words(user.created_at)%> ago, 

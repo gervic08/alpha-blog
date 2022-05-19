@@ -2,12 +2,14 @@
 
 <%= gravatar_for(@user, size: 200) %> 
 
-<div class="row justify-content-center mt-4 mb-4">
-  <%= link_to 'Update your Profile', edit_user_path(@user), class: "btn btn-outline-success text-white text-center"%>
-</div>
-<div class="row justify-content-center mt-4 mb-4">
-  <%= link_to 'Log out', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger text-white text-center"%>
-</div>
+<% if logged_in? && @user == current_user %>
+  <div class="row justify-content-center mt-4 mb-4">
+    <%= link_to 'Update your Profile', edit_user_path(@user), class: "btn btn-outline-success text-white text-center"%>
+  </div>
+  <div class="row justify-content-center mt-4 mb-4">
+    <%= link_to 'Log out', logout_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger text-white text-center"%>
+  </div>
+<% end %>  
 
 <%= render 'articles/article'%>
 
