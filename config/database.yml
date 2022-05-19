@@ -23,9 +23,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: http://127.0.0.1:3000
   database: postgres
-  pool: 5
-  username: gervic
-  password: dni624604
-  host: 127.0.0.1
 
