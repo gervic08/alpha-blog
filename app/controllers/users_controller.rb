@@ -2,6 +2,8 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show update edit]
+  before_action :require_user, except: %i[index show create new]
+  before_action :require_same_user, only: %i[update edit destroy]
 
   def index
     @users = User.order(:username).page params[:page]
@@ -48,5 +50,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    unless current_user == @user.id
+      flash[:notice] = "Your user is not allowed to do that"
+      redirect_to user_path
+    end
   end
 end
