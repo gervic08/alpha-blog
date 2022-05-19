@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 
   def require_same_user
     unless current_user == @user || current_user.admin?
-      flash[:notice] = "Your user is not allowed to do that"
+      flash[:alert] = "Your user is not allowed to do that"
       redirect_to user_path
     end
   end

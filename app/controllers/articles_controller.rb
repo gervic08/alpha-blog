@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = 'Article was successfully destroyed.'
       redirect_to @article
     else
-      flash[:notice] = 'Article doesn´t exist. '
+      flash[:alert] = 'Article doesn´t exist. '
       redirect_to 'show'
     end
   end
@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
 
   def require_same_user
     unless current_user == @article.user || current_user.admin?
-      flash[:notice] = "Your user is not allowed to do that"
+      flash[:alert] = "Your user is not allowed to do that"
       redirect_to articles_path
     end
   end
