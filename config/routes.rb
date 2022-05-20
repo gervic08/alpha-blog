@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :articles
+  resources :categories, except: %i[destroy]
   root 'pages#home'
   get 'about', to: 'pages#about'
   get 'signup', to: 'users#new'
