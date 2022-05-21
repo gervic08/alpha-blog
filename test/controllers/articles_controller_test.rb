@@ -1,23 +1,25 @@
 require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @article = articles(:one)
+  def setup 
+    @user = User.create(username: "Tester", email: "tester@test.com", password: "test123")
+    @article = Article.create(title: "Test Article", description: "For testing only")
   end
 
-  test "should get index" do
+  test "should get index of articles" do
     get articles_url
     assert_response :success
   end
 
-  test "should get new" do
+  test "should get new article" do
     get new_article_url
     assert_response :success
   end
 
   test "should create article" do
-    assert_difference('Article.count') do
-      post articles_url, params: { article: { description: @article.description, title: @article.title } }
+    assert_difference('Article.count', 1) do
+      post articles_url, params: { article: { title: @article.title, description: @article.description } }
+      Article.last.user = @user
     end
 
     assert_redirected_to article_url(Article.last)
@@ -28,7 +30,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should get edit article" do
     get edit_article_url(@article)
     assert_response :success
   end
