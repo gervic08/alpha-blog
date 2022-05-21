@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start
 require "test_helper"
 
 class CreateCategoryTest < ActionDispatch::IntegrationTest
