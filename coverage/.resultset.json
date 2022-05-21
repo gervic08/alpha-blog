@@ -1,0 +1,47 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/home/gervic/TheUltimateRoRDevelopmentCourse/alpha-blog/test/test_helper.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/gervic/TheUltimateRoRDevelopmentCourse/alpha-blog/test/integration/listing_categories_test.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1653174176
+  }
+}

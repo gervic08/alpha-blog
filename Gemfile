@@ -53,6 +53,7 @@ group :test do
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'simplecov', require: false
 end
 
 group :production do

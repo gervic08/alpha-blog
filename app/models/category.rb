@@ -13,4 +13,6 @@ class Category < ApplicationRecord
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false },
                    length: { minimum: 3, maximum: 20}
+
+  max_paginates_per 5
 end
