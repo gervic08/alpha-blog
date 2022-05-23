@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :set_user, except: %i[index create new]
-  before_action :require_user, only: %i[update edit destroy]
+  before_action :require_user, only: %i[update edit]
   before_action :require_same_user, only: %i[update edit destroy]
 
   def index
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user
     @articles = @user.articles.order(:title).page params[:page]
   end
 
@@ -29,8 +28,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user
+  def edit  
   end
 
   def update

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
+  before_action :require_admin, except: %i[index show]
   before_action :set_category, only: %i[show]
 
   def index
@@ -33,5 +34,12 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def require_admin
+    if !(logged_in? && current_user.admin?)
+      flash[:alert] = "Only admin users can perform this action"
+      redirect_to categories_url
+    end
   end
 end
