@@ -5,6 +5,11 @@ SimpleCov.start
 require "test_helper"
 
 class CreateCategoryTest < ActionDispatch::IntegrationTest
+  setup do
+    @admin = User.create(username: "admin", email: "admin@example.com", password: "admin123", admin: true)
+    sign_in_as(@admin)
+  end 
+
   test "get new category form and create a category" do
     get "/categories/new"
     assert_response :success
