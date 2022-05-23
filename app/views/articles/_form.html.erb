@@ -14,7 +14,15 @@
           <div class="col-9">
             <%= form.text_area :description, rows: 10, class: "form-control mt-4 shadow rounded", placeholder: "Description of article"  %>
           </div>
-        </div>   
+        </div>
+        <div class="form-group row">
+          <%=form.label "Categories", class: "col-2 col-form-label text-light text-center" %>   
+            <div class="col-9 mt-2">
+              <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+                <%= b.label(class: "text-white") { b.check_box + " " + b.text } %>
+              <% end %>
+            </div>
+        </div>  
         <div class="form-group row justify-content-center">
           <%= form.submit class: "btn mb-4 btn-outline-light btn-lg" %>
         </div>
