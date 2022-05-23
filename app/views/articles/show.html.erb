@@ -6,6 +6,9 @@
             <% if @article.user %>
               <%= link_to gravatar_for(@article.user, size: 150), @article.user %>
             <% end %>
+            <% if @article.categories %>
+              <%= render @article.categories%>
+            <% end %>  
           </div>
           <div class="card-body">
             <div class="card-text text-left"> <%= simple_format(@article.description) %></div>

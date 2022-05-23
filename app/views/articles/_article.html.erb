@@ -9,6 +9,9 @@
           </div>
           <div class="card-body">
             <h5 class="card-title"><strong><%= article.title %></strong></h5>
+              <% if article.categories %>
+                <%= render article.categories%>
+              <% end %>  
             <p class="card-text"><%= article.description %></p>
             <%= link_to 'Show', article, class: "btn btn-primary text-white"%>
             <% if logged_in? && (article.user == current_user || current_user.admin?) %>
