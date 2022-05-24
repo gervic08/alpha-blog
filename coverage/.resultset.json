@@ -46,5 +46,30 @@
       }
     },
     "timestamp": 1653314872
+  },
+  "Integration Tests": {
+    "coverage": {
+      "/home/gervic/TheUltimateRoRDevelopmentCourse/alpha-blog/test/test_helper.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1653425987
   }
 }
