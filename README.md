@@ -1,25 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A blog builded in Rails 6 from scratch, without using generators, for educational purposes.
 
-Things you may want to cover:
+Sqlite3 used for development and test Databases, Postgresql for production, thorugh respective gems, Sqlite3 and PG.
 
-* Ruby version
+The project was upload to GitHub usng one branch per feature to clarify the process and make the repo cleaner.
 
-* System dependencies
+Users Authentication system created by scratch, using Bycrypt gem to encrypt passwords.
 
-* Configuration
+Frontend builded with HTML (Embedded Ruby code), CSS and Bootstrap 4.
 
-* Database creation
+Integration tests for articles, users and categories creation. Unit and functionals test for models and controllers.
 
-* Database initialization
+Some Categories features builded through Test Driven Development for educational purposes.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 Deployed in heroku. Link: https://alphablogerman.herokuapp.com/
 
