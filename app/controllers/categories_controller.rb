@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
+  before_action :set_category, only: %i[show edit update]
   before_action :require_admin, except: %i[index show]
-  before_action :set_category, only: %i[show]
 
   def index
     @categories = Category.order(:name).page params[:page]
@@ -24,6 +24,18 @@ class CategoriesController < ApplicationController
     else
       render 'new'
     end  
+  end
+
+  def edit
+  end
+
+  def update
+    if @category.update(category_params)
+      flash[:notice] = "Category name successfully updated"
+      redirect_to @category
+    else
+      render 'edit'
+    end
   end
 
   private
