@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @categories = Category.order(:title).page params[:page]
+    @categories = Category.order(:name).page params[:page]
   end
 
   def new
@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category
+    @articles = @category.articles.order(:title).page params[:page]
   end
 
   def create
