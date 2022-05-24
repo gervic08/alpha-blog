@@ -10,7 +10,7 @@ Users Authentication system created by scratch, using Bycrypt gem to encrypt pas
 
 Frontend builded with HTML (Embedded Ruby code), CSS and Bootstrap 4.
 
-Integration tests for articles, users and categories creation. Unit and functionals test for models and controllers.
+Integration tests for articles, users and categories creation. Unit and functionals test for models and controllers. All made with Rails Minitest.
 
 Some Categories features builded through Test Driven Development for educational purposes.
 
