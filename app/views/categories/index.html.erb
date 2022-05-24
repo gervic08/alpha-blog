@@ -5,6 +5,11 @@
         <div class="card sm-8 mt-4 shadow mb-5 bg-white rounded text-center">
           <div class="card-body">
             <h5 class="card-title "><strong><%= link_to category.name, category, class: 'text-success' %></strong></h5>
+            <% if category.articles && category.articles.count > 0 %>
+              <%= pluralize(category.articles.count, "article") %>
+            <% else %>
+              <p> There aren´t articles in this category, yet </p>
+            <% end %>
           </div>  
           <div class="card-footer text-muted">
             created <%= time_ago_in_words(category.created_at)%> ago, 
