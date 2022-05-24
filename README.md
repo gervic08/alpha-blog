@@ -21,5 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+Deployed in heroku. Link: https://alphablogerman.herokuapp.com/
+
 # alpha-blog
